@@ -1,4 +1,4 @@
-# `NRK-test` — task
+# `Test` — task
 
 This project is an Angularjs web app. 
 The web page fetches a table from SSB through an api call and lists the data in a sortable table
