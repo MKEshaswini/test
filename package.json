@@ -4,7 +4,7 @@
 	"version": "0.0.0",
 	"description": "Web page to fetch data fronm SSB",
 	"repository": "https://github.com/MKEshaswini/test",
-	"license": "ISC",
+	"license": "UNLICENSED",
 	"author": "Eshaswini (eshaswini@gmail.com)",
 	"devDependencies": {
 		"bower": "^1.7.7",
