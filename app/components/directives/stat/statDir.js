@@ -52,19 +52,19 @@
 						//set the default table variant
 						vm.selectedFilter = mainTable.id[0];
 						//For each key in main dataset, create an array of objects
-						for (var key in mainTable) {
+						for (let key in mainTable) {
 
 							//There are more keys in the main dataset than the number of table variants so fetch noly those using indexOf
 							if (vm.filterOptions.indexOf(key) > -1) {
 
 								//Create a new array of obejcts with the fields index and label
-								var tableObj = {};
-								var indexArr = _.keys(mainTable[key].category['label']);
-								var labelArr = _.values(mainTable[key].category['label']);
-								var indexLabelArr = [];
+								let tableObj = {};
+								let indexArr = _.keys(mainTable[key].category['label']);
+								let labelArr = _.values(mainTable[key].category['label']);
+								let indexLabelArr = [];
 
-								for (var i = 0; i < indexArr.length; i++) {
-									var obj = {
+								for (let i = 0; i < indexArr.length; i++) {
+									let obj = {
 										index: indexArr[i],
 										label: labelArr[i]
 									};
