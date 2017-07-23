@@ -3,7 +3,7 @@
 
 	angular.module('myApp').controller('StatDirController', StatDirController);
 
-	function StatDirController($scope, $http, orderByFilter) {
+	function StatDirController($http, orderByFilter) {
 		var vm = this;
 		var dataset = {};
 		var tables = [];

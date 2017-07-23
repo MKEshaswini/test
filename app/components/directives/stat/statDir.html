@@ -1,15 +1,15 @@
-<div class="stat-error" ng-if="tc.errMsg">
+<div class="stat-error" ng-show="tc.errMsg">
 	<span>{{tc.errMsg}}</span>
 </div>
 
-<div class="stat-header" ng-if="!tc.errMsg.length">
+<div class="stat-header" ng-show="!tc.errMsg.length">
 
 	<h4>{{tc.title}}</h4>
 
 	<div class="stat-dropdown" ng-show="tc.filterOptions.length > 1">
 		<div ng-click="tc.blnFilterDropdown = !tc.blnFilterDropdown" class="stat-dropdown-button btn">
 			<span>{{tc.selectedFilter}}</span>
-			<i class="fa fa-caret-down" aria-hidden="true"></i>
+			<i class="fa fa-caret-down"></i>
 		</div>
 
 		<ul ng-show="tc.blnFilterDropdown" class="stat-dropdown-content btn">
@@ -22,7 +22,7 @@
 	</div>
 </div>
 
-<table id="stat-table" ng-show="tc.selectedTable && !tc.errMsg.length">
+<table id="stat-table" ng-if="tc.selectedTable && !tc.errMsg.length">
 	<caption><b>ID : </b>{{tc.id}}, <b>Variable : </b>{{tc.selectedFilter}}</caption>
 	<thead>
 		<tr>
@@ -61,6 +61,6 @@
 	<span class="input-group-addon btn" id="tab-id" ng-click="tc.changeId()">Done</span>
 </form>
 
-<div class="loading overlay" ng-if="tc.load">
+<div class="loading overlay" ng-show="tc.load">
 	<div class="loader"></div>
 </div>
