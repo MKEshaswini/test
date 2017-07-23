@@ -120,7 +120,7 @@ div.stat-dropdown .stat-dropdown-button {
 	background-color: #e8edff;
 }
 
-div.stat-dropdown .stat-dropdown-button i {
+.stat-dropdown-button i {
 	margin-left: auto;
 }
 
@@ -136,12 +136,12 @@ div.stat-dropdown .stat-dropdown-content {
 	text-align: left;
 }
 
-div.stat-dropdown .stat-dropdown-content li {
+.stat-dropdown-content li {
 	list-style: none;
 	padding: 4px 2px
 }
 
-div.stat-dropdown .stat-dropdown-content li:hover {
+.stat-dropdown-content li:hover {
 	background-color: #e8edff;
 }
 
@@ -173,7 +173,7 @@ div.stat-dropdown .stat-dropdown-content li:hover {
 }
 
 .stat-table th,
-.stat-table tfoot tr td {
+.stat-foot tr td {
 	font-size: 13px;
 	font-weight: normal;
 	padding: 8px 12px;
@@ -206,15 +206,15 @@ div.stat-dropdown .stat-dropdown-content li:hover {
 	background: #d0dafd;
 }
 
-.stat-table tfoot tr td span.selected-page {
+.selected-page {
 	background-color: #e8edff;
 }
 
-.stat-table tfoot tr td span.paginate {
+.paginate {
 	padding: 1px 6px;
 }
 
-.stat-table tfoot tr td.no-pages {
+.no-pages {
 	height: 36px;
 }
 
