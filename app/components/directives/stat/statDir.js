@@ -9,21 +9,21 @@
 		var tables = [];
 		var mainTable = [];
 		var limit = 10;
-		vm.id = 95175; // id of the table
+		vm.id = 95175; // sample id of the table
 		vm.title = "";
 		vm.filterOptions = [];
 		vm.sortType = 'index'; // default column name for sort
 		vm.sortReverse = false; // set default sort order to asc
 		vm.selectedFilter = "";
+		vm.pages = [];
+		vm.currentPage = 1;
+		vm.errMsg = "";
 		vm.getData = getData;
 		vm.changeFilter = changeFilter;
 		vm.sort = sort;
-		vm.pages = [];
-		vm.currentPage = 1;
 		vm.prev = prev;
 		vm.next = next;
 		vm.setPage = setPage;
-		vm.errMsg = "";
 		vm.changeId = changeId;
 
 		//Getting data from SSB database
@@ -154,7 +154,7 @@
 		function changeFilter(option) {
 			var newIndex = _.indexOf(mainTable.id, option);
 			vm.selectedFilter = option;
-			vm.blnFilterDropdown = !vm.blnFilterDropdown;
+			vm.blnFilterDropdown = !vm.blnFilterDropdown; //Close the dropdown after selecting
 			vm.sortReverse = false; //on changing the table variant, reset sort order to ascending
 			vm.sortType = "index";
 			vm.currentPage = 1;
@@ -167,7 +167,7 @@
 			vm.sortedArray = vm.sortReverse ? orderByFilter(vm.selectedTable, vm.sortType, true) : orderByFilter(vm.selectedTable, vm.sortType, false);
 			var v1 = (vm.currentPage - 1) * limit; //start index for pagination
 			var v2 = vm.currentPage * limit; //End index for pagination
-			var pcount = Math.ceil(vm.selectedTable.length / limit); //number of pages
+			var pcount = Math.ceil(vm.selectedTable.length / limit); //number of pages e.g., Math.ceil(12/10) = 2
 			var pageArr = [];
 			for (var i = 0; i < pcount; i++) {
 				pageArr.push(i + 1);

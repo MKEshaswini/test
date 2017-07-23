@@ -154,6 +154,20 @@ div.stat-dropdown .stat-dropdown-content li:hover {
 	max-width: 600px;
 }
 
+@media only screen and (max-width:760px) {
+	#stat-table {
+		border-collapse: collapse;
+		min-width: 450px;
+	}
+}
+
+@media only screen and (max-width:500px) {
+	#stat-table {
+		border-collapse: collapse;
+		min-width: 325px;
+	}
+}
+
 #stat-table caption {
 	color: #669;
 }
@@ -177,9 +191,9 @@ div.stat-dropdown .stat-dropdown-content li:hover {
 #stat-table td {
 	padding: 8px 12px;
 	background: #e8edff;
+	border-top: 1px solid transparent;
 	border-bottom: 1px solid #fff;
 	color: #669;
-	border-top: 1px solid transparent;
 }
 
 #stat-table tr:hover td {
@@ -265,19 +279,5 @@ form.input-group.stat-form {
 	}
 	100% {
 		transform: rotate(360deg);
-	}
-}
-
-@media only screen and (max-width:760px) {
-	#stat-table {
-		border-collapse: collapse;
-		min-width: 450px;
-	}
-}
-
-@media only screen and (max-width:500px) {
-	#stat-table {
-		border-collapse: collapse;
-		min-width: 325px;
 	}
 }
