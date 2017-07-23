@@ -1,0 +1,66 @@
+<div class="stat-error" ng-if="tc.errMsg">
+	<span>{{tc.errMsg}}</span>
+</div>
+
+<div class="stat-header" ng-if="!tc.errMsg.length">
+
+	<h4>{{tc.title}}</h4>
+
+	<div class="stat-dropdown" ng-show="tc.filterOptions.length > 1">
+		<div ng-click="tc.blnFilterDropdown = !tc.blnFilterDropdown" class="stat-dropdown-button btn">
+			<span>{{tc.selectedFilter}}</span>
+			<i class="fa fa-caret-down" aria-hidden="true"></i>
+		</div>
+
+		<ul ng-show="tc.blnFilterDropdown" class="stat-dropdown-content btn">
+			<li ng-click="tc.changeFilter(option)" ng-repeat="option in tc.filterOptions">
+				{{option}}
+			</li>
+		</ul>
+
+		<div class="overlay" ng-if="tc.blnFilterDropdown" ng-click="tc.blnFilterDropdown = false"></div>
+	</div>
+</div>
+
+<table id="stat-table" ng-show="tc.selectedTable && !tc.errMsg.length">
+	<caption><b>ID : </b>{{tc.id}}, <b>Variable : </b>{{tc.selectedFilter}}</caption>
+	<thead>
+		<tr>
+			<th ng-click="tc.sort('index')" width="25%">
+				Code <i ng-show="tc.sortType == 'index'" class="btn-sort" ng-class="tc.sortReverse ? 'fa fa-caret-down' : 'fa fa-caret-up'"></i>
+			</th>
+			<th ng-click="tc.sort('label')">
+				Value <i ng-show="tc.sortType == 'label'" class="btn-sort" ng-class="tc.sortReverse ? 'fa fa-caret-down' : 'fa fa-caret-up'"></i>
+			</th>
+		</tr>
+	</thead>
+
+	<tbody>
+		<tr ng-repeat="row in tc.paginatedTable track by $index">
+			<td>{{ row.index }}</td>
+			<td>{{ row.label }}</td>
+		</tr>
+	</tbody>
+
+	<tfoot>
+		<tr class="stat-foot">
+			<td colspan="2" ng-class="{'no-pages' : tc.pages.length ==1 }">
+				<span ng-click="tc.prev()" ng-show="tc.currentPage > 1" class="btn paginate">&laquo;</span>
+				<span ng-click="tc.setPage(n)" ng-repeat="n in tc.pages track by $index" class="btn paginate" ng-class="{'selected-page' : tc.currentPage == n}" ng-show="tc.pages.length >1">{{n}}
+				</span>
+				<span ng-click="tc.next()" ng-show="tc.currentPage < tc.pages.length" class="btn paginate">
+				&raquo;
+				</span>
+			</td>
+		</tr>
+	</tfoot>
+</table>
+
+<form class="input-group stat-form" ng-hide="tc.load" ng-submit="tc.changeId()">
+	<input type="number" class="form-control" placeholder="Enter Table ID" ng-model="tc.newId">
+	<span class="input-group-addon btn" id="tab-id" ng-click="tc.changeId()">Done</span>
+</form>
+
+<div class="loading overlay" ng-if="tc.load">
+	<div class="loader"></div>
+</div>

@@ -1,0 +1,283 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+
+html,
+body {
+	height: 100%;
+	width: 100%;
+}
+
+body {
+	background-color: #f6f6f6;
+	font-family: "Lucida Sans Unicode", "Lucida Grande", Sans-Serif;
+}
+
+article,
+aside,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+	display: block;
+}
+
+header {
+	/* For browsers that do not support gradients */
+	background: #aabcfe;
+	/* For Safari 5.1 to 6.0 */
+	background: -webkit-linear-gradient( #fff, #aabcfe);
+	/* For Opera 11.1 to 12.0 */
+	background: -o-linear-gradient( #fff, #aabcfe);
+	/* For Firefox 3.6 to 15 */
+	background: -moz-linear-gradient( #fff, #aabcfe);
+	background: linear-gradient( #fff, #aabcfe);
+	padding: 40px;
+	display: flex;
+}
+
+header a img {
+	height: 50px;
+}
+
+.stat-row {
+	max-width: 75em;
+	margin-left: auto;
+	margin-right: auto;
+	position: relative;
+}
+
+.stat-container {
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	align-items: center;
+	min-height: 700px;
+	background-color: #fff;
+	padding-top: 40px;
+}
+
+.stat-error {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	position: absolute;
+	top: 0;
+	margin-bottom: 10px;
+	min-height: 40px;
+	width: 100%;
+	color: #fff;
+	font-size: 18px;
+	background-color: #c75351;
+}
+
+div.stat-header {
+	display: flex;
+	justify-content: space-between;
+	align-items: baseline;
+	margin: 0px 40px;
+	color: #515177;
+}
+
+.btn {
+	cursor: pointer;
+	border: 1px solid #aabcfe;
+	border-radius: 5px;
+	align-items: center;
+	font-size: 12px;
+}
+
+.btn:hover {
+	background-color: #e8edff;
+	color: #339;
+}
+
+.overlay {
+	display: flex;
+	align-items: center;
+	position: fixed;
+	top: 0px;
+	right: 0px;
+	bottom: 0px;
+	left: 0px;
+	z-index: 300;
+}
+
+div.stat-dropdown {
+	margin-left: 1em;
+}
+
+div.stat-dropdown .stat-dropdown-button {
+	display: flex;
+	position: relative;
+	margin-right: auto;
+	min-width: 75px;
+	padding: 4px 8px;
+	background-color: #e8edff;
+}
+
+div.stat-dropdown .stat-dropdown-button i {
+	margin-left: auto;
+}
+
+div.stat-dropdown .stat-dropdown-content {
+	background-color: #fff;
+	box-shadow: 0 8px 16px rgba(0, 0, 0, .2);
+	padding: 4px 8px;
+	margin-top: 4px;
+	margin-bottom: 5px;
+	z-index: 999;
+	min-width: 75px;
+	position: absolute;
+	text-align: left;
+}
+
+div.stat-dropdown .stat-dropdown-content li {
+	list-style: none;
+	padding: 4px 2px
+}
+
+div.stat-dropdown .stat-dropdown-content li:hover {
+	background-color: #e8edff;
+}
+
+#stat-table {
+	font-size: 12px;
+	margin: 10px 45px 45px 45px;
+	text-align: left;
+	border-collapse: collapse;
+	min-width: 600px;
+	max-width: 600px;
+}
+
+#stat-table caption {
+	color: #669;
+}
+
+#stat-table th,
+#stat-table tfoot tr td {
+	font-size: 13px;
+	font-weight: normal;
+	padding: 8px 12px;
+	border-bottom: 1px solid #fff;
+	color: #039;
+}
+
+#stat-table th {
+	background: #b9c9fe;
+	border-top: 4px solid #aabcfe;
+	cursor: pointer;
+	text-decoration: underline;
+}
+
+#stat-table td {
+	padding: 8px 12px;
+	background: #e8edff;
+	border-bottom: 1px solid #fff;
+	color: #669;
+	border-top: 1px solid transparent;
+}
+
+#stat-table tr:hover td {
+	background: #d0dafd;
+	color: #339;
+}
+
+#stat-table tfoot tr td {
+	text-align: right;
+	background: #d0dafd;
+}
+
+#stat-table tfoot tr td span.selected-page {
+	background-color: #e8edff;
+}
+
+#stat-table tfoot tr td span.paginate {
+	padding: 1px 6px;
+}
+
+#stat-table tfoot tr td.no-pages {
+	height: 36px;
+}
+
+.btn-sort {
+	font-size: 16px;
+	margin-left: 5px;
+	cursor: pointer;
+}
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+	-webkit-appearance: none;
+	margin: 0;
+}
+
+form.input-group.stat-form {
+	max-width: 250px;
+}
+
+.stat-form {
+	padding: 10px 0px;
+}
+
+.stat-form .form-control,
+.stat-form .input-group-addon {
+	border: 1px solid #aabcfe;
+	font-size: 12px;
+}
+
+.stat-form .input-group-addon {
+	background-color: #e8edff;
+}
+
+.loading {
+	background-color: rgba(31, 32, 35, 0.80);
+	color: White;
+	justify-content: center;
+}
+
+.loader {
+	border: 5px solid #f3f3f3;
+	border-radius: 50%;
+	border-top: 5px solid #6173bd;
+	width: 40px;
+	height: 40px;
+	-webkit-animation: spin 1s linear infinite;
+	animation: spin 1s linear infinite;
+}
+
+@-webkit-keyframes spin {
+	0% {
+		-webkit-transform: rotate(0deg);
+	}
+	100% {
+		-webkit-transform: rotate(360deg);
+	}
+}
+
+@keyframes spin {
+	0% {
+		transform: rotate(0deg);
+	}
+	100% {
+		transform: rotate(360deg);
+	}
+}
+
+@media only screen and (max-width:760px) {
+	#stat-table {
+		border-collapse: collapse;
+		min-width: 450px;
+	}
+}
+
+@media only screen and (max-width:500px) {
+	#stat-table {
+		border-collapse: collapse;
+		min-width: 325px;
+	}
+}
